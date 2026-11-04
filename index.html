@@ -21,7 +21,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    /* تثبيت الصفحة بدون أي سكرول نهائياً */
+    /* تثبيت الصفحة ومنع التمرير نهائياً */
     html, body {
       width: 100%;
       height: 100%;
@@ -37,25 +37,28 @@
       justify-content: center;
       padding: 16px;
       background-color: #0b192c;
+      /* دمج الخلفية بلون داكن يظهر فوراً لتفادي بطء التحميل */
       background-image: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.65)), url('bg.png'), url('bg.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
     }
 
+    /* الحاوية مع الإزاحة للأسفل بمسافة مناسبة */
     .container {
       width: 100%;
-      max-width: 390px;
+      max-width: 380px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      margin-top: 55px; /* إزاحة العنوان والكروت للأسفل */
     }
 
-    /* العنوان بنمط نيون أنيق */
+    /* العنوان بنمط نيون جذاب */
     .header {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 28px;
     }
 
     .header .main-title {
@@ -63,7 +66,7 @@
       font-size: 22px;
       font-weight: 800;
       letter-spacing: 0.6px;
-      text-shadow: 0 0 12px rgba(56, 189, 248, 0.4), 0 2px 6px rgba(0, 0, 0, 0.8);
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.5), 0 2px 6px rgba(0, 0, 0, 0.8);
     }
 
     .header .sub-title {
@@ -74,61 +77,57 @@
       letter-spacing: 4px;
       text-transform: uppercase;
       margin-top: 5px;
-      text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.7);
     }
 
     /* شبكة الأيقونات */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
+      gap: 20px;
       width: 100%;
       justify-items: center;
     }
 
-    /* تصميم الإطار مع توهج نيون خافت */
+    /* زر شفاف بالكامل بدون خلفية داكنة مع توهج نيون محيطي */
     .icon-btn {
       width: 100%;
-      max-width: 155px;
+      max-width: 160px;
       aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      border-radius: 24px;
-      overflow: hidden;
+      background: transparent;
+      border: none;
       padding: 0;
-      background: rgba(15, 23, 42, 0.35);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      
-      /* حواف مضيئة وتوهج نيون خافت */
-      border: 1px solid rgba(56, 189, 248, 0.35);
-      box-shadow: 0 0 16px rgba(56, 189, 248, 0.22),
-                  0 8px 20px rgba(0, 0, 0, 0.6);
-      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 26px;
+      transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+      /* توهج نيون خافت وناعم خلف حواف الصورة */
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.35),
+                  0 0 35px rgba(2, 132, 199, 0.2);
     }
 
-    /* جعل الصورة تملأ الإطار بالكامل */
+    /* تمدد الصورة لتملأ الحجم بالكامل */
     .icon-btn img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
-      border-radius: 23px;
+      border-radius: 26px;
+      filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.45));
       transition: transform 0.2s ease, filter 0.2s ease;
     }
 
-    /* تأثير اللمس */
+    /* تفاعل اللمس بزيادة توهج النيون والسطوع */
     .icon-btn:active {
-      transform: scale(0.93);
-      border-color: rgba(56, 189, 248, 0.8);
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.55),
-                  0 0 8px rgba(255, 255, 255, 0.5);
+      transform: scale(0.92);
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.75),
+                  0 0 45px rgba(2, 132, 199, 0.4);
     }
 
     .icon-btn:active img {
-      filter: brightness(1.1);
+      filter: drop-shadow(0 0 16px rgba(56, 189, 248, 0.9)) brightness(1.12);
     }
   </style>
 </head>
