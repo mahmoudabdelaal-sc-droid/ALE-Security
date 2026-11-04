@@ -21,98 +21,114 @@
       -webkit-tap-highlight-color: transparent;
     }
 
+    /* تثبيت الصفحة بدون أي سكرول نهائياً */
+    html, body {
+      width: 100%;
+      height: 100%;
+      height: 100dvh;
+      overflow: hidden;
+      touch-action: none;
+    }
+
     body {
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 24px 16px;
+      padding: 16px;
       background-color: #0b192c;
-      /* الخلفية التكنولوجية الأصلية */
-      background-image: linear-gradient(rgba(10, 25, 47, 0.45), rgba(10, 25, 47, 0.7)), url('bg.png'), url('bg.jpg');
+      background-image: linear-gradient(rgba(10, 25, 47, 0.4), rgba(10, 25, 47, 0.65)), url('bg.png'), url('bg.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
-      background-attachment: fixed;
     }
 
     .container {
       width: 100%;
-      max-width: 440px;
-      text-align: center;
+      max-width: 390px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* العنوان على سطرين بتأثير نيون ناعم */
+    /* العنوان بنمط نيون أنيق */
     .header {
-      margin-bottom: 36px;
+      text-align: center;
+      margin-bottom: 24px;
     }
 
     .header .main-title {
       color: #ffffff;
-      font-size: 24px;
+      font-size: 22px;
       font-weight: 800;
-      letter-spacing: 0.8px;
+      letter-spacing: 0.6px;
       text-shadow: 0 0 12px rgba(56, 189, 248, 0.4), 0 2px 6px rgba(0, 0, 0, 0.8);
     }
 
     .header .sub-title {
       display: block;
       color: #38bdf8;
-      font-size: 15px;
+      font-size: 14px;
       font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
-      margin-top: 6px;
+      margin-top: 5px;
       text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
     }
 
-    /* شبكة الأيقونات الأربعة الكبيرة */
+    /* شبكة الأيقونات */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
+      gap: 18px;
       width: 100%;
-      padding: 4px;
+      justify-items: center;
     }
 
-    /* كروت زجاجية شفافة وتفاعلية */
+    /* تصميم الإطار مع توهج نيون خافت */
     .icon-btn {
-      background: rgba(255, 255, 255, 0.05);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-radius: 28px;
-      padding: 14px;
+      width: 100%;
+      max-width: 155px;
+      aspect-ratio: 1 / 1;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(255, 255, 255, 0.04);
-      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      border-radius: 24px;
+      overflow: hidden;
+      padding: 0;
+      background: rgba(15, 23, 42, 0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      
+      /* حواف مضيئة وتوهج نيون خافت */
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      box-shadow: 0 0 16px rgba(56, 189, 248, 0.22),
+                  0 8px 20px rgba(0, 0, 0, 0.6);
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* تكبير حجم الأيقونة لتملأ الزر */
+    /* جعل الصورة تملأ الإطار بالكامل */
     .icon-btn img {
       width: 100%;
-      max-width: 130px;
-      aspect-ratio: 1 / 1;
-      object-fit: contain;
-      border-radius: 20px;
-      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 23px;
       transition: transform 0.2s ease, filter 0.2s ease;
     }
 
-    /* تأثير اللمس والتفاعل بالنيون */
+    /* تأثير اللمس */
     .icon-btn:active {
-      transform: scale(0.92);
+      transform: scale(0.93);
       border-color: rgba(56, 189, 248, 0.8);
-      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), inset 0 0 15px rgba(56, 189, 248, 0.3);
-      background: rgba(56, 189, 248, 0.15);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.55),
+                  0 0 8px rgba(255, 255, 255, 0.5);
     }
 
     .icon-btn:active img {
-      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));
+      filter: brightness(1.1);
     }
   </style>
 </head>
