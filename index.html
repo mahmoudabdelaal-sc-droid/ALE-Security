@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Air Liquide Egypt | Security</title>
 
-  <!-- إعدادات شاشة التثبيت للموبايل -->
+  <!-- إعدادات شاشة التثبيت للهاتف (PWA) -->
   <link rel="manifest" href="manifest.json">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,10 +27,10 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 20px 14px;
-      /* صورة الخلفية bg مع معالجة التوافق */
+      padding: 24px 16px;
       background-color: #0b192c;
-      background-image: linear-gradient(rgba(10, 25, 47, 0.65), rgba(10, 25, 47, 0.75)), url('bg.png'), url('bg.jpg');
+      /* الخلفية التكنولوجية الأصلية */
+      background-image: linear-gradient(rgba(10, 25, 47, 0.45), rgba(10, 25, 47, 0.7)), url('bg.png'), url('bg.jpg');
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
@@ -43,73 +43,76 @@
       text-align: center;
     }
 
+    /* العنوان على سطرين بتأثير نيون ناعم */
     .header {
-      margin-bottom: 24px;
+      margin-bottom: 36px;
     }
 
-    .header h1 {
+    .header .main-title {
       color: #ffffff;
-      font-size: 22px;
+      font-size: 24px;
       font-weight: 800;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      letter-spacing: 0.8px;
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.4), 0 2px 6px rgba(0, 0, 0, 0.8);
     }
 
-    /* شبكة الكروت الأربعة الكبيرة */
+    .header .sub-title {
+      display: block;
+      color: #38bdf8;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-top: 6px;
+      text-shadow: 0 0 10px rgba(56, 189, 248, 0.6);
+    }
+
+    /* شبكة الأيقونات الأربعة الكبيرة */
     .grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      gap: 22px;
       width: 100%;
+      padding: 4px;
     }
 
-    .card {
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 24px;
-      padding: 18px 10px;
-      min-height: 180px;
+    /* كروت زجاجية شفافة وتفاعلية */
+    .icon-btn {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-radius: 28px;
+      padding: 14px;
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.45);
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      transition: transform 0.15s ease, filter 0.15s ease;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5), inset 0 0 12px rgba(255, 255, 255, 0.04);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .card:active {
-      transform: scale(0.95);
-      filter: brightness(0.92);
-    }
-
-    /* ضبط حجم الأيقونة والصورة لتملأ الكارت بشكل بارز */
-    .card-img {
-      width: 95px;
-      height: 95px;
+    /* تكبير حجم الأيقونة لتملأ الزر */
+    .icon-btn img {
+      width: 100%;
+      max-width: 130px;
+      aspect-ratio: 1 / 1;
       object-fit: contain;
-      margin-bottom: 10px;
-      border-radius: 18px;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
+      border-radius: 20px;
+      filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.5));
+      transition: transform 0.2s ease, filter 0.2s ease;
     }
 
-    .card-title {
-      font-size: 15px;
-      font-weight: 800;
-      color: #0f172a;
-      line-height: 1.3;
-      text-align: center;
+    /* تأثير اللمس والتفاعل بالنيون */
+    .icon-btn:active {
+      transform: scale(0.92);
+      border-color: rgba(56, 189, 248, 0.8);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5), inset 0 0 15px rgba(56, 189, 248, 0.3);
+      background: rgba(56, 189, 248, 0.15);
     }
 
-    .card-sub {
-      font-size: 11px;
-      font-weight: 600;
-      color: #64748b;
-      margin-top: 3px;
-      direction: ltr;
-      text-align: center;
+    .icon-btn:active img {
+      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));
     }
   </style>
 </head>
@@ -117,36 +120,29 @@
 
   <div class="container">
     <div class="header">
-      <h1>Air Liquide Egypt | Security</h1>
+      <div class="main-title">Air Liquide Egypt</div>
+      <span class="sub-title">SECURITY</span>
     </div>
 
     <div class="grid">
       <!-- 1. بلاتفورم الإدارة -->
-      <a href="https://sites.google.com/airliquide.com/security" target="_blank" class="card">
-        <img src="icon1.png" onerror="this.onerror=null; this.src='icon1.jpg';" alt="بلاتفورم الإدارة" class="card-img">
-        <span class="card-title">بلاتفورم الإدارة</span>
-        <span class="card-sub">Management Platform</span>
+      <a href="https://sites.google.com/airliquide.com/security" target="_blank" class="icon-btn">
+        <img src="icon1.png" onerror="this.onerror=null; this.src='icon1.jpg';" alt="Platform">
       </a>
 
       <!-- 2. حضور وانصراف الموظفين -->
-      <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbwD63oCu4ke-dwRHn0-jIb5XXQcaKeabZAAdf40IAgYToPk8cFf7g-lnxayAbzMbY-OhQ/exec" target="_blank" class="card">
-        <img src="icon2.png" onerror="this.onerror=null; this.src='icon2.jpg';" alt="حضور وانصراف" class="card-img">
-        <span class="card-title">حضور وانصراف</span>
-        <span class="card-sub">Attendance Check</span>
+      <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbwD63oCu4ke-dwRHn0-jIb5XXQcaKeabZAAdf40IAgYToPk8cFf7g-lnxayAbzMbY-OhQ/exec" target="_blank" class="icon-btn">
+        <img src="icon2.png" onerror="this.onerror=null; this.src='icon2.jpg';" alt="Attendance">
       </a>
 
       <!-- 3. انداكشن أمن الزوار -->
-      <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbxZrqMnVwWogl5eesV4TA4VuZqvG8SN71n5Emd275hBKsGFXL_iyZ8HgurFSx3Ob26jug/exec" target="_blank" class="card">
-        <img src="icon3.png" onerror="this.onerror=null; this.src='icon3.jpg';" alt="أمن الزوار" class="card-img">
-        <span class="card-title">أمن الزوار</span>
-        <span class="card-sub">Visitor Induction</span>
+      <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbxZrqMnVwWogl5eesV4TA4VuZqvG8SN71n5Emd275hBKsGFXL_iyZ8HgurFSx3Ob26jug/exec" target="_blank" class="icon-btn">
+        <img src="icon3.png" onerror="this.onerror=null; this.src='icon3.jpg';" alt="Visitor Induction">
       </a>
 
       <!-- 4. فحص طفايات الحريق -->
-      <a href="https://script.google.com/macros/s/AKfycbyHHzt3TCAWmQUINb4glC1wFOOno8nrvRcxoXLVZ4p5RXOFdKXRuNmPY2t636P08cU-sw/exec" target="_blank" class="card">
-        <img src="icon4.png" onerror="this.onerror=null; this.src='icon4.jpg';" alt="طفايات الحريق" class="card-img">
-        <span class="card-title">طفايات الحريق</span>
-        <span class="card-sub">Fire Inspection</span>
+      <a href="https://script.google.com/macros/s/AKfycbyHHzt3TCAWmQUINb4glC1wFOOno8nrvRcxoXLVZ4p5RXOFdKXRuNmPY2t636P08cU-sw/exec" target="_blank" class="icon-btn">
+        <img src="icon4.png" onerror="this.onerror=null; this.src='icon4.jpg';" alt="Fire Inspection">
       </a>
     </div>
   </div>
