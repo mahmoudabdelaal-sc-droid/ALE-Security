@@ -1,0 +1,16 @@
+{
+  "name": "Air Liquide Security Portal",
+  "short_name": "AL Security",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#004b87",
+  "theme_color": "#004b87",
+  "icons": [
+    {
+      "src": "app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

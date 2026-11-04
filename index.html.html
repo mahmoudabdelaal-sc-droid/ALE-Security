@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Air Liquide | بوابة الأمن والسلامة</title>
+
+  <!-- ربط ملف تعريف التطبيق (Android) -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- إعدادات شاشة الآيفون (iOS) -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="AL Security">
+  <link rel="apple-touch-icon" href="app-icon.png">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Cairo", sans-serif;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      /* خلفية مع دمج الصورة bg.jpg وطبقة حماية داكنة */
+      background: linear-gradient(rgba(10, 25, 47, 0.75), rgba(10, 25, 47, 0.85)), url('bg.jpg') no-repeat center center / cover;
+      background-attachment: fixed;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    .header {
+      margin-bottom: 28px;
+    }
+
+    .header h1 {
+      color: #ffffff;
+      font-size: 20px;
+      font-weight: 700;
+      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+    }
+
+    .header p {
+      color: #cbd5e1;
+      font-size: 13px;
+      margin-top: 6px;
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* شبكة الأيقونات الأربعة */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 16px 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .card:active {
+      transform: scale(0.95);
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .card-icon {
+      width: 70px;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 10px;
+      border-radius: 14px;
+    }
+
+    .card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0f172a;
+      line-height: 1.3;
+    }
+
+    .card-sub {
+      font-size: 11px;
+      font-weight: 500;
+      color: #64748b;
+      margin-top: 3px;
+      direction: ltr;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>إدارة السيكيورتي | Air Liquide</h1>
+      <p>البوابة السريعة للنماذج والأنظمة</p>
+    </div>
+
+    <div class="grid">
+      <!-- 1. تقارير الإدارة -->
+      <a href="https://sites.google.com/airliquide.com/security" target="_blank" class="card">
+        <img src="icon1.png" alt="تقارير الإدارة" class="card-icon">
+        <span class="card-title">تقارير الإدارة</span>
+        <span class="card-sub">Management Reports</span>
+      </a>
+
+      <!-- 2. حضور وانصراف الموظفين -->
+      <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbwD63oCu4ke-dwRHn0-jIb5XXQcaKeabZAAdf40IAgYToPk8cFf7g-lnxayAbzMbY-OhQ/exec" target="_blank" class="card">
+        <img src="icon2.png" alt="حضور وانصراف" class="card-icon">
+        <span class="card-title">حضور وانصراف</span>
+        <span class="card-sub">Attendance Check</span>
+      </a>
+
+      <!-- 3. انداكشن أمن الزوار -->
+      <a href="https://script.google.com/a/macros/airliquide.com/s/AKfycbxZrqMnVwWogl5eesV4TA4VuZqvG8SN71n5Emd275hBKsGFXL_iyZ8HgurFSx3Ob26jug/exec" target="_blank" class="card">
+        <img src="icon3.png" alt="أمن الزوار" class="card-icon">
+        <span class="card-title">أمن الزوار</span>
+        <span class="card-sub">Visitor Induction</span>
+      </a>
+
+      <!-- 4. فحص طفايات الحريق -->
+      <a href="https://script.google.com/macros/s/AKfycbyHHzt3TCAWmQUINb4glC1wFOOno8nrvRcxoXLVZ4p5RXOFdKXRuNmPY2t636P08cU-sw/exec" target="_blank" class="card">
+        <img src="icon4.png" alt="طفايات الحريق" class="card-icon">
+        <span class="card-title">طفايات الحريق</span>
+        <span class="card-sub">Fire Inspection</span>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
